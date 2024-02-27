@@ -567,3 +567,44 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
 
         modified:   README.md
         modified:   app/projects/admin.py
+
+
+#### 10. Membuat model Tag dan migrasi
+
+        (bisaapa) λ python manage.py makemigrations
+        Migrations for 'projects':
+          app\projects\migrations\0004_tag.py
+            - Create model Tag
+
+        (bisaapa) λ python manage.py migrate
+        Operations to perform:
+          Apply all migrations: admin, auth, contenttypes, projects, sessions
+        Running migrations:
+          Applying projects.0004_tag... OK
+
+        (bisaapa) λ python manage.py sqlmigrate projects 0004
+        --
+        -- Create model Tag
+        --
+        CREATE TABLE `projects_tag` (
+                `name` varchar(200) NOT NULL, 
+                `created` datetime(6) NOT NULL, 
+                `id` char(32) NOT NULL PRIMARY KEY
+        );
+
+        mysql> DESC projects_tag;
+        +---------+--------------+------+-----+---------+-------+
+        | Field   | Type         | Null | Key | Default | Extra |
+        +---------+--------------+------+-----+---------+-------+
+        | name    | varchar(200) | NO   |     | NULL    |       |
+        | created | datetime(6)  | NO   |     | NULL    |       |
+        | id      | char(32)     | NO   | PRI | NULL    |       |
+        +---------+--------------+------+-----+---------+-------+
+        3 rows in set (0.00 sec)
+
+        mysql> SELECT * FROM  projects_tag;
+        Empty set (0.00 sec)
+
+        modified:   README.md
+        new file:   app/projects/migrations/0004_tag.py
+        modified:   app/projects/models.py
