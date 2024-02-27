@@ -55,3 +55,6 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
         λ venv312502\Scripts\activate.bat
 
         (bisaapa) λ
+
+
+## 3. MENGINSTAL DJANGO
