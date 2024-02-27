@@ -371,3 +371,9 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
         | superuser |            1 |
         +-----------+--------------+
         1 row in set (0.00 sec)
+
+
+#### 3. Login as superuser
+
+        http://127.0.0.1:8000/admin/
+        use your createsuperuser username and  password to login
