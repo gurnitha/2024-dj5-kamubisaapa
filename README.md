@@ -125,3 +125,6 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
 #### 3. Membuka laman default bawaan django di browser
 
         http://127.0.0.1:8000/
+
+
+## 5. MEMEBUAT APLIKASI DJANGO
