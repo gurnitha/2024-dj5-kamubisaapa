@@ -240,4 +240,13 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
         +-------------------------------------------+     
         39 rows in set (0.00 sec)                         
                                                           
-        mysql>                                            
+        mysql>
+
+
+#### 3. Konek db dengan proyek
+
+        modified:   README.md
+        modified:   config/settings.py
+
+        ...
+        Did you install mysqlclient?                                                  
