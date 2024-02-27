@@ -42,3 +42,16 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
 
         modified:   .gitignore
         modified:   README.md
+
+
+#### 2. Mengaktifkan venv312502
+
+        λ REM: Mengaktifkan venv312502
+
+        C:\Users\ING\Desktop\2024-DEVSPACE\2024-dj5-kamubisaapa(main -> origin)
+        λ ls
+        README.md  venv312502/
+
+        λ venv312502\Scripts\activate.bat
+
+        (bisaapa) λ
