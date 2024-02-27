@@ -150,3 +150,9 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
 
 
 ## 6. HALLO WORLD, HALLO TEMAN
+
+
+#### 1. Membuat hallo_world views
+
+        modified:   README.md
+        modified:   app/projects/views.py
