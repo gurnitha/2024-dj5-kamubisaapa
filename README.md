@@ -25,3 +25,20 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
 
 
 ## 2. MEMBUAT LINGKUNGAN VIRTUAL
+
+
+#### 1. Membuat lingkungan virtual
+
+        C:\Users\ING\Desktop\2024-DEVSPACE\2024-dj5-kamubisaapa(main -> origin)
+        λ REM: Membuat lingkungan virtual atau local environment
+
+        λ python --version
+        Python 3.12.1
+
+        λ pip --version
+        pip 24.0 from E:\_WORKSPACE\laragon\bin\python\python-3.12\Lib\site-packages\pip (python 3.12)
+
+        λ python -m venv venv312502 --promp bisaapa
+
+        modified:   .gitignore
+        modified:   README.md
