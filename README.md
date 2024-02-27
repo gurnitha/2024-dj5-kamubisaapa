@@ -279,3 +279,65 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
 
 ## 8. MELINDUNGI FILE SENSITIF
 
+
+#### 1. Menggunakan django-environ untuk melindungi sensitif file
+
+        Steps 1: instal django-environ
+        (bisaapa) λ python -m pip install django-environ
+
+        Steps 2: create .env .env-example
+        (bisaapa) λ touch .env .env-example
+
+        Steps 3: set up .env file
+        DEBUG=True
+        SECRET_KEY=django-insecure-httc#cur2tsn2qq*zhu$%d+*gtm21u4l=$p(_$!5+8ukcgo&k2
+        DATABASE_NAME=2024_dj5_kamubisaapa
+        DATABASE_USER=root
+        DATABASE_PASSWORD=
+        DATABASE_HOST=localhost
+        DATABASE_PORT=3306
+
+        # Step 4: setup config/settings.py
+        # 1. import environ dan os
+        import environ
+        import os
+
+        # 1. Create environ
+        env = environ.Env(
+            # set casting, default value
+            DEBUG=(bool, False)
+        )
+
+        # 2. Set the project base directory
+        BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+        # 3. Take environment variables from .env file
+        environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
+        # 4. False if not in os.environ because of casting above
+        DEBUG = env('DEBUG')
+
+        # 5. Raises Django's ImproperlyConfigured exception if SECRET_KEY not in os.environ
+        SECRET_KEY = env('SECRET_KEY')
+
+        # 6. Set db
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.mysql',
+                'NAME': os.environ.get('DATABASE_NAME'),
+                'USER': os.environ.get('DATABASE_USER'),
+                'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
+                'HOST': os.environ.get('DATABASE_HOST'),
+                'PORT': os.environ.get('DATABASE_PORT'),
+            }
+        }
+
+        Step 5: run python manage.py check
+        (bisaapa) λ python manage.py check
+
+        The result:
+        System check identified no issues (0 silenced).
+
+        new file:   .env-example
+        modified:   README.md
+        modified:   config/settings.py
