@@ -441,3 +441,9 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
 #### 4. Add data proyek dari admin dashboard
 
         modified:   README.md
+
+
+#### 5. Modifikasi model Project dengan menambahkan beberapa kolom
+
+        modified:   README.md
+        modified:   app/projects/models.py
