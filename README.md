@@ -435,3 +435,4 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
 
 #### 3. Register Project model pada admin.py
 
+        modified:   app/projects/admin.py
