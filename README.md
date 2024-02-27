@@ -447,3 +447,10 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
 
         modified:   README.md
         modified:   app/projects/models.py
+
+
+#### 6. Menginstal pillow
+
+        (bisaapa) λ pip install pillow
+        ...
+        Successfully installed pillow-10.2.0
