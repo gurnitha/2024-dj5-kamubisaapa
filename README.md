@@ -615,3 +615,91 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
         modified:   README.md
         modified:   app/projects/admin.py
 
+
+#### 12. Added ManyToMany relationship between Project and Tag models dan migrasi
+
+        (bisaapa) λ python manage.py makemigrations
+        Migrations for 'projects':
+          app\projects\migrations\0005_project_tags.py
+            - Add field tags to project
+
+        (bisaapa) λ python manage.py migrate
+        Operations to perform:
+          Apply all migrations: admin, auth, contenttypes, projects, sessions
+        Running migrations:
+          Applying projects.0005_project_tags... OK
+
+        (bisaapa) λ python manage.py sqlmigrate projects 0005
+        --
+        -- Add field tags to project
+        --
+        CREATE TABLE `projects_project_tags` (
+                `id` bigint AUTO_INCREMENT NOT NULL PRIMARY KEY, 
+                `project_id` char(32) NOT NULL, 
+                `tag_id` char(32) NOT NULL
+        );
+        ALTER TABLE `projects_project_tags` ADD CONSTRAINT `projects_project_tags_project_id_tag_id_5891719a_uniq` UNIQUE (`project_id`, `tag_id`);
+        ALTER TABLE `projects_project_tags` ADD CONSTRAINT `projects_project_tags_project_id_9bbfa17b_fk_projects_project_id` FOREIGN KEY (`project_id`) REFERENCES `projects_project` (`id`);
+        ALTER TABLE `projects_project_tags` ADD CONSTRAINT `projects_project_tags_tag_id_c949773d_fk_projects_tag_id` FOREIGN KEY (`tag_id`) REFERENCES `projects_tag` (`id`);
+
+
+        mysql> SHOW TABLES;
+        +--------------------------------+
+        | Tables_in_2024_dj5_kamubisaapa |
+        +--------------------------------+
+        | auth_group                     |
+        | auth_group_permissions         |
+        | auth_permission                |
+        | auth_user                      |
+        | auth_user_groups               |
+        | auth_user_user_permissions     |
+        | django_admin_log               |
+        | django_content_type            |
+        | django_migrations              |
+        | django_session                 |
+        | projects_project               |
+        | projects_project_tags          | <--- new
+        | projects_review                |
+        | projects_tag                   |
+        +--------------------------------+
+        14 rows in set (0.00 sec)
+
+        mysql> DESC projects_project;
+        +----------------+---------------+------+-----+---------+-------+
+        | Field          | Type          | Null | Key | Default | Extra |
+        +----------------+---------------+------+-----+---------+-------+
+        | title          | varchar(200)  | NO   |     | NULL    |       |
+        | description    | longtext      | YES  |     | NULL    |       |
+        | demo_link      | varchar(2000) | YES  |     | NULL    |       |
+        | source_link    | varchar(2000) | YES  |     | NULL    |       |
+        | created        | datetime(6)   | NO   |     | NULL    |       |
+        | id             | char(32)      | NO   | PRI | NULL    |       |
+        | featured_image | varchar(100)  | YES  |     | NULL    |       |
+        | vote_ratio     | int           | YES  |     | NULL    |       |
+        | vote_total     | int           | YES  |     | NULL    |       |
+        +----------------+---------------+------+-----+---------+-------+
+        9 rows in set (0.00 sec)
+
+        mysql> DESC projects_project_tags;
+        +------------+----------+------+-----+---------+----------------+
+        | Field      | Type     | Null | Key | Default | Extra          |
+        +------------+----------+------+-----+---------+----------------+
+        | id         | bigint   | NO   | PRI | NULL    | auto_increment |
+        | project_id | char(32) | NO   | MUL | NULL    |                |
+        | tag_id     | char(32) | NO   | MUL | NULL    |                |
+        +------------+----------+------+-----+---------+----------------+
+        3 rows in set (0.00 sec)
+
+        mysql> DESC projects_tag;
+        +---------+--------------+------+-----+---------+-------+
+        | Field   | Type         | Null | Key | Default | Extra |
+        +---------+--------------+------+-----+---------+-------+
+        | name    | varchar(200) | NO   |     | NULL    |       |
+        | created | datetime(6)  | NO   |     | NULL    |       |
+        | id      | char(32)     | NO   | PRI | NULL    |       |
+        +---------+--------------+------+-----+---------+-------+
+        3 rows in set (0.00 sec)
+
+        modified:   README.md
+        new file:   app/projects/migrations/0005_project_tags.py
+        modified:   app/projects/models.py
