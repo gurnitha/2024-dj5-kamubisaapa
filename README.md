@@ -445,6 +445,14 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
 
 #### 5. Modifikasi model Project dengan menambahkan beberapa kolom
 
+        +-----------+-----------------------+-----------------------+-----------------------+----------------------------+----------------------------------+----------------+------------+------------+
+        | title     | description           | demo_link             | source_link           | created                    | id                               | featured_image | vote_ratio | vote_total |
+        +-----------+-----------------------+-----------------------+-----------------------+----------------------------+----------------------------------+----------------+------------+------------+
+        | Project 3 | Project 3 description | https://www.demo3.com | https://www.demo3.com | 2024-02-27 09:44:19.568896 | 181697c7cb8644399026e3afad514644 | color1.PNG     |          0 |          0 |
+        | Project 2 | Project 2 description | https://www.demo2.com | https://www.demo2.com | 2024-02-27 07:49:55.074515 | 3b3be2857cb54a7ab9001c96424c6d17 | default.jpg    |          0 |          0 |
+        | Project 1 | Project 1 description | https://www.demo1.com | https://www.demo1.com | 2024-02-27 07:49:30.719706 | 57fe3df7aa954891aca2717d2ce3d4ed | default.jpg    |          0 |          0 |
+        +-----------+-----------------------+-----------------------+-----------------------+----------------------------+----------------------------------+----------------+------------+------------+
+
         modified:   README.md
         modified:   app/projects/models.py
 
@@ -454,3 +462,57 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
         (bisaapa) λ pip install pillow
         ...
         Successfully installed pillow-10.2.0
+
+
+#### 7. Menjalankan migrasi setelah modifikasi tabel Project
+
+        (bisaapa) λ python manage.py makemigrations
+        Migrations for 'projects':
+          app\projects\migrations\0002_project_featured_image_project_vote_ratio_and_more.py
+            - Add field featured_image to project
+            - Add field vote_ratio to project
+            - Add field vote_total to project
+
+        (bisaapa) λ python manage.py migrate
+        Operations to perform:
+          Apply all migrations: admin, auth, contenttypes, projects, sessions
+        Running migrations:
+          Applying projects.0002_project_featured_image_project_vote_ratio_and_more... OK
+
+
+        (bisaapa) λ python manage.py sqlmigrate projects 0002
+        --
+        -- Add field featured_image to project
+        --
+        ALTER TABLE `projects_project` ADD COLUMN `featured_image` varchar(100) DEFAULT 'default.jpg' NULL;
+        ALTER TABLE `projects_project` ALTER COLUMN `featured_image` SET DEFAULT NULL;
+        --
+        -- Add field vote_ratio to project
+        --
+        ALTER TABLE `projects_project` ADD COLUMN `vote_ratio` integer DEFAULT 0 NULL;
+        ALTER TABLE `projects_project` ALTER COLUMN `vote_ratio` SET DEFAULT NULL;
+        --
+        -- Add field vote_total to project
+        --
+        ALTER TABLE `projects_project` ADD COLUMN `vote_total` integer DEFAULT 0 NULL;
+        ALTER TABLE `projects_project` ALTER COLUMN `vote_total` SET DEFAULT NULL;
+
+        mysql> DESC projects_project;
+        +----------------+---------------+------+-----+---------+-------+
+        | Field          | Type          | Null | Key | Default | Extra |
+        +----------------+---------------+------+-----+---------+-------+
+        | title          | varchar(200)  | NO   |     | NULL    |       |
+        | description    | longtext      | YES  |     | NULL    |       |
+        | demo_link      | varchar(2000) | YES  |     | NULL    |       |
+        | source_link    | varchar(2000) | YES  |     | NULL    |       |
+        | created        | datetime(6)   | NO   |     | NULL    |       |
+        | id             | char(32)      | NO   | PRI | NULL    |       |
+        | featured_image | varchar(100)  | YES  |     | NULL    |       |
+        | vote_ratio     | int           | YES  |     | NULL    |       |
+        | vote_total     | int           | YES  |     | NULL    |       |
+        +----------------+---------------+------+-----+---------+-------+
+        9 rows in set (0.00 sec)
+
+        modified:   README.md
+        new file:   app/projects/migrations/0002_project_featured_image_project_vote_ratio_and_more.py
+        new file:   color1.PNG
