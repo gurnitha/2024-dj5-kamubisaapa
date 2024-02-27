@@ -380,3 +380,9 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
 
 
 ## 10. DJANGO MODEL
+
+
+#### 1. Membuat model: Project
+
+        modified:   README.md
+        modified:   app/projects/models.py
