@@ -377,3 +377,6 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
 
         http://127.0.0.1:8000/admin/
         use your createsuperuser username and  password to login
+
+
+## 10. DJANGO MODEL
