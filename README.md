@@ -341,3 +341,6 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
         new file:   .env-example
         modified:   README.md
         modified:   config/settings.py
+
+
+## 9. DJANGO ADMIN
