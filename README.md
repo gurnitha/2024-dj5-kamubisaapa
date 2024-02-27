@@ -249,4 +249,11 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
         modified:   config/settings.py
 
         ...
-        Did you install mysqlclient?                                                  
+        Did you install mysqlclient? 
+
+
+#### 4. Meng-upgrade pip   
+
+        (bisaapa) λ python.exe -m pip install --upgrade pip
+        ...
+        Successfully installed pip-24.0                                             
