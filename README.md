@@ -162,3 +162,9 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
 
         modified:   README.md
         new file:   app/projects/urls.py
+
+
+#### 3. Memasang projects/urls.py pada config/urls.py
+
+        modified:   README.md
+        modified:   config/urls.p
