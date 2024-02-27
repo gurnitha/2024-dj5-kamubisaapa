@@ -71,3 +71,15 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
 
         [notice] A new release of pip is available: 23.2.1 -> 24.0
         [notice] To update, run: python.exe -m pip install --upgrade pip
+
+
+#### 2. Memeriksa hasil instalasi
+
+        (bisaapa) λ REM: Memeriksa hasil instalasi
+
+        C:\Users\ING\Desktop\2024-DEVSPACE\2024-dj5-kamubisaapa(main -> origin)
+        (bisaapa) λ pip freeze
+        asgiref==3.7.2
+        Django==5.0.2
+        sqlparse==0.4.4
+        tzdata==2024.1
