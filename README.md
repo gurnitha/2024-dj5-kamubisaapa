@@ -147,3 +147,6 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
         modified:   README.md
         modified:   app/projects/apps.py
         modified:   config/settings.py
+
+
+## 6. HALLO WORLD, HALLO TEMAN
