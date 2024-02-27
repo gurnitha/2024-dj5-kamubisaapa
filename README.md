@@ -561,3 +561,9 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
         modified:   README.md
         new file:   app/projects/migrations/0003_review.py
         modified:   app/projects/models.py
+
+
+#### 9. Register model Review pada projects/admin.py
+
+        modified:   README.md
+        modified:   app/projects/admin.py
