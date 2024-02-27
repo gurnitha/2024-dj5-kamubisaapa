@@ -120,3 +120,8 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
         Django version 5.0.2, using settings 'config.settings'
         Starting development server at http://127.0.0.1:8000/
         Quit the server with CTRL-BREAK.
+
+
+#### 3. Membuka laman default bawaan django di browser
+
+        http://127.0.0.1:8000/
