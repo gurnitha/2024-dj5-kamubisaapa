@@ -350,3 +350,24 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
 
         (bisaapa) λ python manage.py makemigrations
         (bisaapa) λ python manage.py migrate
+
+
+#### 2. Membuat superuser
+
+        (bisaapa) λ REM: Membuat superuser
+        (bisaapa) λ python manage.py createsuperuser
+        Username (leave blank to use 'ing'): superuser
+        Email address: superuser@mail.com
+        Password:
+        Password (again):
+        The password is too similar to the email address.
+        Bypass password validation and create user anyway? [y/N]: y
+        Superuser created successfully.
+
+        mysql> SELECT username, is_superuser FROM auth_user;
+        +-----------+--------------+
+        | username  | is_superuser |
+        +-----------+--------------+
+        | superuser |            1 |
+        +-----------+--------------+
+        1 row in set (0.00 sec)
