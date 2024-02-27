@@ -344,3 +344,9 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
 
 
 ## 9. DJANGO ADMIN
+
+
+#### 1. Mengaktifkan django admin dengan menjalan migrasi
+
+        (bisaapa) λ python manage.py makemigrations
+        (bisaapa) λ python manage.py migrate
