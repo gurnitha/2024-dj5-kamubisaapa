@@ -256,4 +256,22 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
 
         (bisaapa) λ python.exe -m pip install --upgrade pip
         ...
-        Successfully installed pip-24.0                                             
+        Successfully installed pip-24.0  
+
+
+#### 5. Memeriksa koneksi db dengan proyek dengan menjalankan server
+
+        (bisaapa) λ REM: Memeriksa koneksi db dengan proyek dengan menjalankan server
+
+        (bisaapa) λ python manage.py runserver
+        Watching for file changes with StatReloader
+        Performing system checks...
+
+        System check identified no issues (0 silenced).
+
+        You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+        Run 'python manage.py migrate' to apply them.
+        February 27, 2024 - 11:56:15
+        Django version 5.0.2, using settings 'config.settings'
+        Starting development server at http://127.0.0.1:8000/
+        Quit the server with CTRL-BREAK.
