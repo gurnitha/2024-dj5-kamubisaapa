@@ -168,3 +168,17 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
 
         modified:   README.md
         modified:   config/urls.p
+
+
+#### 4. Menjalankan server dan melihat hasilnya
+
+        (bisaapa) λ REM: Memeriksa hasilnya dan menjalankan server
+
+        (bisaapa) λ python manage.py check
+        System check identified no issues (0 silenced).
+
+        C:\Users\ING\Desktop\2024-DEVSPACE\2024-dj5-kamubisaapa(main -> origin)
+        (bisaapa) λ python manage.py runserver
+        ...
+        Starting development server at http://127.0.0.1:8000/
+        Quit the server with CTRL-BREAK.
