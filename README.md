@@ -516,3 +516,48 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
         modified:   README.md
         new file:   app/projects/migrations/0002_project_featured_image_project_vote_ratio_and_more.py
         new file:   color1.PNG
+
+
+#### 8. Membuat model Review dan menjalankan migrasi
+
+        (bisaapa) λ REM: Membuat model Review dan menjalankan migrasi
+
+        (bisaapa) λ python manage.py makemigrations
+        Migrations for 'projects':
+          app\projects\migrations\0003_review.py
+            - Create model Review
+
+        (bisaapa) λ python manage.py migrate
+        Operations to perform:
+          Apply all migrations: admin, auth, contenttypes, projects, sessions
+        Running migrations:
+          Applying projects.0003_review... OK
+
+        (bisaapa) λ python manage.py sqlmigrate projects 0003
+        --
+        -- Create model Review
+        --
+        CREATE TABLE `projects_review` (
+                `body` longtext NULL, 
+                `value` varchar(200) NOT NULL, 
+                `created` datetime(6) NOT NULL, 
+                `id` char(32) NOT NULL PRIMARY KEY
+        );
+
+        mysql> DESC projects_review;
+        +---------+--------------+------+-----+---------+-------+
+        | Field   | Type         | Null | Key | Default | Extra |
+        +---------+--------------+------+-----+---------+-------+
+        | body    | longtext     | YES  |     | NULL    |       |
+        | value   | varchar(200) | NO   |     | NULL    |       |
+        | created | datetime(6)  | NO   |     | NULL    |       |
+        | id      | char(32)     | NO   | PRI | NULL    |       |
+        +---------+--------------+------+-----+---------+-------+
+        4 rows in set (0.00 sec)
+
+        mysql> SELECT * FROM projects_review;
+        Empty set (0.00 sec)
+
+        modified:   README.md
+        new file:   app/projects/migrations/0003_review.py
+        modified:   app/projects/models.py
