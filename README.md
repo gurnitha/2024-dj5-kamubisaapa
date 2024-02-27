@@ -608,3 +608,10 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
         modified:   README.md
         new file:   app/projects/migrations/0004_tag.py
         modified:   app/projects/models.py
+
+
+#### 11. Register model Tag pada admin.py
+
+        modified:   README.md
+        modified:   app/projects/admin.py
+
