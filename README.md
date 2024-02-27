@@ -208,3 +208,36 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
         mysql>
 
 
+#### 2. Create db
+
+        mysql> SHOW DATABASES;                            
+        +-------------------------------------------+     
+        | Database                                  |     
+        +-------------------------------------------+     
+        | 2024_db_1                                 |     
+        | 2024_db_2                                 |     
+        ...  
+        | sys                                       |     
+        | test_db                                   |     
+        | w3schools                                 |     
+        +-------------------------------------------+     
+        38 rows in set (0.06 sec)                         
+                                                          
+        mysql> CREATE DATABASE 2024_dj5_kamubisaapa;      
+        Query OK, 1 row affected (0.09 sec)               
+                                                          
+        mysql> SHOW DATABASES;                            
+        +-------------------------------------------+     
+        | Database                                  |     
+        +-------------------------------------------+     
+        | 2024_db_1                                 |     
+        | 2024_db_2                                 |       
+        | 2024_dj5_kamubisaapa                      |     
+        ...   
+        | sys                                       |     
+        | test_db                                   |     
+        | w3schools                                 |     
+        +-------------------------------------------+     
+        39 rows in set (0.00 sec)                         
+                                                          
+        mysql>                                            
