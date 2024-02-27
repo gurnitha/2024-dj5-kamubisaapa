@@ -29,7 +29,7 @@ class Project(models.Model):
         blank=True)
     tags = models.ManyToManyField(
         'Tag', # To put '' is not a must, but
-               # it means Tag resides bellow Project model
+               # it means Tag resides bellow Project
         blank=True)
     vote_total = models.IntegerField(
         default=0, 
@@ -58,7 +58,9 @@ class Review(models.Model):
         ('up', 'Up Vote'),
         ('down', 'Down Vote'),
     )
-
+    project = models.ForeignKey(
+        Project, 
+        on_delete=models.CASCADE)
     body = models.TextField(
         null=True, 
         blank=True)

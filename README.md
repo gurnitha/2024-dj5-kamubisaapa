@@ -703,3 +703,31 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
         modified:   README.md
         new file:   app/projects/migrations/0005_project_tags.py
         modified:   app/projects/models.py
+
+
+#### 13. Added OneToMany relationship between Project and Review models dan migrasi
+
+        mysql> DESC projects_review;
+        +------------+--------------+------+-----+---------+-------+
+        | Field      | Type         | Null | Key | Default | Extra |
+        +------------+--------------+------+-----+---------+-------+
+        | body       | longtext     | YES  |     | NULL    |       |
+        | value      | varchar(200) | NO   |     | NULL    |       |
+        | created    | datetime(6)  | NO   |     | NULL    |       |
+        | id         | char(32)     | NO   | PRI | NULL    |       |
+        | project_id | char(32)     | NO   | MUL | NULL    |       | <--- new
+        +------------+--------------+------+-----+---------+-------+
+        5 rows in set (0.00 sec)
+
+        mysql> SELECT * FROM  projects_review;
+        +------------+-------+----------------------------+----------------------------------+----------------------------------+
+        | body       | value | created                    | id                               | project_id                       |
+        +------------+-------+----------------------------+----------------------------------+----------------------------------+
+        | Good job.  | up    | 2024-02-27 10:16:32.887908 | 0a899336288145f08ffe1c7d8031477c | 181697c7cb8644399026e3afad514644 |
+        | Well done! | up    | 2024-02-27 13:57:50.040587 | 3a8c261640d84ef180a12d4f00a04f61 | 3b3be2857cb54a7ab9001c96424c6d17 |
+        +------------+-------+----------------------------+----------------------------------+----------------------------------+
+        2 rows in set (0.00 sec)
+
+        modified:   README.md
+        new file:   app/projects/migrations/0006_review_project.py
+        modified:   app/projects/models.py
