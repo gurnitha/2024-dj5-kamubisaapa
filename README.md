@@ -140,3 +140,10 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
         new file:   app/projects/models.py
         new file:   app/projects/tests.py
         new file:   app/projects/views.py
+
+
+#### 2. Instal aplikasi projects pada config/settings.py
+
+        modified:   README.md
+        modified:   app/projects/apps.py
+        modified:   config/settings.py
