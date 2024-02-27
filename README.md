@@ -128,3 +128,15 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
 
 
 ## 5. MEMEBUAT APLIKASI DJANGO
+
+
+#### 1. Membuat aplikasi django dengan nama 'projects' di dalam folder app
+
+        modified:   README.md
+        new file:   app/projects/__init__.py
+        new file:   app/projects/admin.py
+        new file:   app/projects/apps.py
+        new file:   app/projects/migrations/__init__.py
+        new file:   app/projects/models.py
+        new file:   app/projects/tests.py
+        new file:   app/projects/views.py
