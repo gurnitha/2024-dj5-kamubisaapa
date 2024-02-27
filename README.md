@@ -156,3 +156,9 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
 
         modified:   README.md
         modified:   app/projects/views.py
+
+
+#### 2. Membuat urls untuk hello_world views
+
+        modified:   README.md
+        new file:   app/projects/urls.py
