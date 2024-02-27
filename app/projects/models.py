@@ -1,6 +1,6 @@
-# projects/models.py
+# app/projects/models.py
 
-# Django modules
+# Django and third parties modules
 from django.db import models
 import uuid # to overide the default id in the table
 

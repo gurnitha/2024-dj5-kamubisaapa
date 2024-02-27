@@ -386,3 +386,52 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
 
         modified:   README.md
         modified:   app/projects/models.py
+
+
+#### 2. Menjalankan migrasi membuat tabel
+
+        (bisaapa) λ REM: Membuat tabel projects
+
+        (bisaapa) λ python manage.py makemigrations
+        Migrations for 'projects':
+          app\projects\migrations\0001_initial.py
+            - Create model Project
+
+        (bisaapa) λ python manage.py migrate
+        Operations to perform:
+          Apply all migrations: admin, auth, contenttypes, projects, sessions
+        Running migrations:
+          Applying projects.0001_initial... OK
+
+        (bisaapa) λ python manage.py sqlmigrate projects 0001
+        --
+        -- Create model Project
+        --
+        CREATE TABLE `projects_project` (
+                `title` varchar(200) NOT NULL,
+                 `description` longtext NULL,
+                 `demo_link` varchar(2000) NULL, 
+                 `source_link` varchar(2000) NULL, 
+                 `created` datetime(6) NOT NULL, 
+                 `id` char(32) NOT NULL PRIMARY KEY
+        );
+
+        mysql> DESC projects_project;
+        +-------------+---------------+------+-----+---------+-------+
+        | Field       | Type          | Null | Key | Default | Extra |
+        +-------------+---------------+------+-----+---------+-------+
+        | title       | varchar(200)  | NO   |     | NULL    |       |
+        | description | longtext      | YES  |     | NULL    |       |
+        | demo_link   | varchar(2000) | YES  |     | NULL    |       |
+        | source_link | varchar(2000) | YES  |     | NULL    |       |
+        | created     | datetime(6)   | NO   |     | NULL    |       |
+        | id          | char(32)      | NO   | PRI | NULL    |       |
+        +-------------+---------------+------+-----+---------+-------+
+        6 rows in set (0.00 sec)
+
+        modified:   README.md
+        new file:   app/projects/migrations/0001_initial.py
+
+
+#### 3. Register Project model pada admin.py
+
