@@ -734,3 +734,9 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
 
 
 ## 11. DJANGO ORM
+
+
+#### 1. Berlatih teknik menggunakan Django ORM
+
+        modified:   README.md
+        new file:   django_orm.py
