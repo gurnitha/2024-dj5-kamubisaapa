@@ -731,3 +731,6 @@ Membuat A REAL WORLD PROJECT: Aplikasi untuk memajang hasil karya orang-orang kr
         modified:   README.md
         new file:   app/projects/migrations/0006_review_project.py
         modified:   app/projects/models.py
+
+
+## 11. DJANGO ORM
